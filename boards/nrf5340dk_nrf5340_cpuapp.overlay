@@ -1,0 +1,21 @@
+// &led0 {
+// 	gpios = <&gpio0 25 GPIO_ACTIVE_LOW>;
+// 	label = "Green LED 0";
+// };
+
+&spi2 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	sck-pin = <4>;
+	mosi-pin = <5>;
+	miso-pin = <7>;
+	cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+	
+	icm20948@0 {
+		compatible = "invensense,icm20948";
+		spi-max-frequency = <24000000>;
+		reg = <0>;
+		label = "ICM20948";
+		int-gpios = <&gpio0 25 GPIO_ACTIVE_HIGH>;
+	};
+};

@@ -1,0 +1,4 @@
+&led0 {
+	gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
+	label = "Green LED 0";
+};
