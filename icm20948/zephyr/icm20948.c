@@ -414,9 +414,9 @@ static int icm20948_init(const struct device *dev)
 			SPI_TRANSFER_MSB);
 	drv_data->spi_cfg.cs = &drv_data->spi_cs;
 
-	// icm20948_spi_init(drv_data->spi, &drv_data->spi_cfg);
-	// icm20948_data_init(drv_data, cfg);
-	// icm20948_sensor_init(dev);
+	icm20948_spi_init(drv_data->spi, &drv_data->spi_cfg);
+	icm20948_data_init(drv_data, cfg);
+	icm20948_sensor_init(dev);
 
 	drv_data->accel_sensitivity_shift = 14 - 3;
 	drv_data->gyro_sensitivity_x10 = icm20948_gyro_sensitivity_x10[3];
